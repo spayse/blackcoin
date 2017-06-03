@@ -124,7 +124,7 @@ bool AppInit(int argc, char* argv[])
         //
         // Parameters
         //
-        // If Qt is used, parameters/blackcoin.conf are parsed in qt/bitcoin.cpp's main()
+        // If Qt is used, parameters/Hydrocarbon.conf are parsed in qt/bitcoin.cpp's main()
         ParseParameters(argc, argv);
         if (!boost::filesystem::is_directory(GetDataDir(false)))
         {
@@ -135,13 +135,13 @@ bool AppInit(int argc, char* argv[])
 
         if (mapArgs.count("-?") || mapArgs.count("--help"))
         {
-            // First part of help message is specific to blackcoind / RPC client
+            // First part of help message is specific to Hydrocarbond / RPC client
             std::string strUsage = _("Blackcoin version") + " " + FormatFullVersion() + "\n\n" +
                 _("Usage:") + "\n" +
-                  "  blackcoind [options]                     " + "\n" +
-                  "  blackcoind [options] <command> [params]  " + _("Send command to -server or blackcoind") + "\n" +
-                  "  blackcoind [options] help                " + _("List commands") + "\n" +
-                  "  blackcoind [options] help <command>      " + _("Get help for a command") + "\n";
+                  "  Hydrocarbond [options]                     " + "\n" +
+                  "  Hydrocarbond [options] <command> [params]  " + _("Send command to -server or Hydrocarbond") + "\n" +
+                  "  Hydrocarbond [options] help                " + _("List commands") + "\n" +
+                  "  Hydrocarbond [options] help <command>      " + _("Get help for a command") + "\n";
 
             strUsage += "\n" + HelpMessage();
 
@@ -151,7 +151,7 @@ bool AppInit(int argc, char* argv[])
 
         // Command-line RPC
         for (int i = 1; i < argc; i++)
-            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "blackcoin:"))
+            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "Hydrocarbon:"))
                 fCommandLine = true;
 
         if (fCommandLine)
@@ -177,7 +177,7 @@ int main(int argc, char* argv[])
 {
     bool fRet = false;
 
-    // Connect blackcoind signal handlers
+    // Connect Hydrocarbond signal handlers
     noui_connect();
 
     fRet = AppInit(argc, argv);
@@ -218,8 +218,8 @@ bool static Bind(const CService &addr, bool fError = true) {
 std::string HelpMessage()
 {
     string strUsage = _("Options:") + "\n" +
-        "  -conf=<file>           " + _("Specify configuration file (default: blackcoin.conf)") + "\n" +
-        "  -pid=<file>            " + _("Specify pid file (default: blackcoind.pid)") + "\n" +
+        "  -conf=<file>           " + _("Specify configuration file (default: Hydrocarbon.conf)") + "\n" +
+        "  -pid=<file>            " + _("Specify pid file (default: Hydrocarbond.pid)") + "\n" +
         "  -gen                   " + _("Generate coins") + "\n" +
         "  -gen=0                 " + _("Don't generate coins") + "\n" +
         "  -datadir=<dir>         " + _("Specify data directory") + "\n" +
@@ -294,7 +294,7 @@ std::string HelpMessage()
     return strUsage;
 }
 
-/** Initialize blackcoin.
+/** Initialize Hydrocarbon.
  *  @pre Parameters should be parsed and config file should be read.
  */
 bool AppInit2()
@@ -588,7 +588,7 @@ bool AppInit2()
         strErrors << _("Error loading blkindex.dat") << "\n";
 
     // as LoadBlockIndex can take several minutes, it's possible the user
-    // requested to kill blackcoin-qt during the last operation. If so, exit.
+    // requested to kill Hydrocarbon-qt during the last operation. If so, exit.
     // As the program has not fully started yet, Shutdown() is possibly overkill.
     if (fRequestShutdown)
     {

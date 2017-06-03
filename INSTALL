@@ -1,9 +1,9 @@
-Building Blackcoin
+Building Hydrocarbon(C8H)
 
-See doc/readme-qt.rst for instructions on building Blackcoin-QT,
+See doc/readme-qt.rst for instructions on building Hydrocarbon-QT,
 the intended-for-end-users, nice-graphical-interface, reference
 implementation of Blackcoin.
 
 See doc/build-*.txt for instructions on building blackcoind,
 the intended-for-services, no-graphical-interface, reference
-implementation of Blackcoin.
+implementation of Hydrocarbon.

@@ -1,7 +1,7 @@
 src/*.exe
-src/blackcoin
-src/blackcoind
-src/test_blackcoin
+src/Hydrocarbon
+src/Hydrocarbond
+src/test_Hydrocarbon
 src/build.h
 .*.swp
 *.*~*
@@ -14,7 +14,7 @@ src/build.h
 #compilation and Qt preprocessor part
 *.qm
 Makefile
-blackcoin-qt
+Hydrocarbon-qt
 #resources cpp
 qrc_*.cpp
 #qt creator
